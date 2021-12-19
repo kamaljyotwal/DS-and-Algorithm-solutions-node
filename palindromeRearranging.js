@@ -1,5 +1,12 @@
-function palindromeRearranging(inputString) {
-  // unsolved
+function solution(inputString) {
+  return (
+    inputString
+      .split("")
+      .sort()
+      .join("")
+      .replace(/(\w)\1/g, "").length < 2
+  );
 }
 
-console.log(palindromeRearranging("abbcabb"));
+console.log(solution("abbcbba"));
+// abbcbba
