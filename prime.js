@@ -10,4 +10,5 @@ function prime(n) {
   }
   return true;
 }
-console.log(prime(27));
+
+console.log(prime(51));
