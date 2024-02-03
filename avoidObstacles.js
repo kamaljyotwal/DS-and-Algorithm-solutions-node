@@ -1,9 +1,10 @@
 function solution(inputArray) {
-  let std = inputArray.sort((a, b) => a - b);
+  let sortedArr = inputArray.sort((a, b) => a - b);
 
-  for (let i = 2; i < Infinity; i++) {
-    if (std.indexOf(i) == -1) {
-      let t = std.every((k) => k % i !== 0);
+  for (let i = 2; i < 20; i++) {
+    // console.log(std.indexOf(i) == -1)
+    if (sortedArr.indexOf(i) == -1) {
+      let t = sortedArr.every((k) => k % i !== 0);
       if (t == true) {
         return i;
       }
