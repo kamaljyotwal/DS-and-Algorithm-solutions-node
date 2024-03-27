@@ -6,10 +6,9 @@ let products = [
     { name: "Tomatoes", category: "vegetable" },
     { name: "Broccoli", category: "vegetable" },
 ];
-
+// My custom function
 function groupbyMe(arr) {
-    let types = Array.from(new Set(arr.map((i) => i.category)));
-    // console.log(types)
+    let types = [...new Set(arr.map((i) => i.category))];
     let result = {}
     types.map(i => result[i] = [])
     // console.log(result)
@@ -19,4 +18,23 @@ function groupbyMe(arr) {
     }
     return result
 }
-console.log(groupbyMe(products))
+// Implementation by AI, efficient not little unreadable
+function groupbyMe(arr) {
+    return arr.reduce((result, item) => {
+        (result[item.category] = result[item.category] || []).push(item);
+        return result;
+    }, {});
+}
+
+// AI implemented alternate approach without using reduce.
+function groupBy(arr, key) {
+    let result = {};
+    arr.forEach(item => {
+        const keyValue = item[key];
+        result[keyValue] = result[keyValue] || [];
+        result[keyValue].push(item);
+    });
+    return result;
+}
+
+console.log(groupBy(products, "category"))
