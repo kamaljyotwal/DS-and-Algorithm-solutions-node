@@ -9,7 +9,6 @@ function alternatingSums(a) {
       teamB += a[i];
     }
   }
-
   return [teamA, teamB];
 }
 
