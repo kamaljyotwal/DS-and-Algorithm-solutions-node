@@ -1,5 +1,4 @@
-// Given two strings, find the number of common characters between them. For "aabcc" and "adcaa", the output should be 3,strings have 3 common characters - 2 "a"s and 1 "c".
-// Best approach
+// Given two strings, find the common characters between them. For "aabcc" and "adcaa", the output should be 3, as both strings have 3 common characters  2 "a"s and 1 "c".
 function commonCharacterCount(str1, str2) {
   const charFreq1 = {};
   for (const char of str1) {
