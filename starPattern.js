@@ -5,14 +5,15 @@
 //   *
 //   *
 // *****
-// Best Approach
+// Best Approach--------------------------------------------------------
 function drawStarPattern(n = 5) {
   console.log("*".repeat(n));
   console.log([...Array(n)].map(() => " ".repeat(Math.floor(n / 2)) + "*").join("\n"));
   console.log("*".repeat(n));
 }
 drawStarPattern(5);
-// --------------------------------------------------
+
+// Approach 2------------------------------------------------------------
 // function drawStarPattern(num) {
 //   let char = "*";
 //   if (isNaN(num) || num % 2 == 0) return "Not valid";
@@ -24,7 +25,8 @@ drawStarPattern(5);
 //   }
 //   console.log(char.repeat(num));
 // }
-//-----------------------------------------------------
+
+//Approach 3-------------------------------------------------------------
 // function drawStarPattern() {
 //   const n = 5; // Number of stars in the top and bottom rows
 //   const height = 7; // Total number of rows
