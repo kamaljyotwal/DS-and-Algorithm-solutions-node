@@ -7,4 +7,4 @@ function fibo(n) {
   return newArr;
 }
 
-console.log(fibo(70));
+console.log(fibo(10));
