@@ -2,7 +2,7 @@
 // Given a ticket number n, determine if it's lucky or not.
 
 function isLucky(n) {
-  let res = Array.from(String(n));
+  let res = [...String(n)];
   let arr = res.slice(0, res.length / 2);
   let arr2 = res.slice(res.length / 2, res.length);
 
