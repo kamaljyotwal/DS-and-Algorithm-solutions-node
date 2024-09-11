@@ -6,9 +6,7 @@
 // debouncedLogHi()
 // debouncedLogHi()
 // debouncedLogHi()
-// debouncedLogHi()
-// debouncedLogHi()
-// debouncedLogHi()
+
 // -------------------------------------------------
 // const timeoutId1 = setTimeout(() => {
 //   console.log("Timeout 1 executed");
@@ -43,12 +41,15 @@
 
 // const person = {
 //   isHuman: false,
-//   printIntroduction: function () {
+//   printIntroduction: function() {
 //     console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
 //   },
 // };
+
 // const me = Object.create(person);
+// console.log(me)
 // me.name = "Ankit";
+// console.log(me)
 // me.printIntroduction();
 
 // ----------------------------------------------------------------------
@@ -65,53 +66,61 @@
 // const incrementCounter = outerFunction();
 // console.log(incrementCounter())
 // console.log(incrementCounter())
+
 // -----------------------------------------------------------------------
 // currying
 // function makeAdder(x) {
-//     return function (y) {
-//         return x + y;
-//     };
+//   return function (y) {
+//     return x + y;
+//   };
 // }
 // const add5 = makeAdder(5);
 // const add10 = makeAdder(10);
 // console.log(add5(2));
 // console.log(add10(2));
 // console.log(makeAdder(5)(5));
-// -----------------------------------------------------------------------
 
+// -----------------------------------------------------------------------
 // const myName = {
-//     firstName: 'Ankit',
-//     lastName: 'Saxena'
-// }
+//   firstName: "kamal",
+//   lastName: "kant",
+// };
 // function printName(city, country) {
-//     console.log(`${this.firstName} ${this.lastName}, ${city} - ${country}`);
+//   console.log(`${this.firstName} ${this.lastName}, ${city} - ${country}`);
 // }
+// // printName.call(myName, "Palia", "India");
+
+// // custom call method
 // Function.prototype.myCall = function (context, ...args) {
-//     context.myFn = this;
-//     context.myFn(...args);
-// }
+//   // console.log(context, "con"); // this is the object
+//   // console.log(this, "this"); // 'this' is the function
+//   context.myFn = this;
+//   // console.log(context, "con2");
+//   context.myFn(...args);
+// };
+// // printName.myCall(myName, "Palia", "India");
+
+// // custom apply method
 // Function.prototype.myApply = function (context, args) {
-//     context.myFn = this;
-//     context.myFn(...args);
+//   context.myFn = this;
+//   context.myFn(...args);
 // }
-
-// printName.myCall(myName, "Palia", "India");
 // printName.myApply(myName, ["Palia", "India"]);
-// -----------------------------------------------------------------------
 
+// -----------------------------------------------------------------------
 // let a = [1, 2, 2, 3];
 // let b = [2, 4, 5];
 // let result = [...a, ...b];
 
-// // // 1st approach
-// console.log(Array.from(new Set(result)), "res");
+// // 1st approach
+// console.log([...new Set(result)], '1st');
 
-// // // 2nd approach
+// // 2nd approach
 // let finalResult = [];
 // result.forEach((i) => (finalResult.indexOf(i) == -1 ? finalResult.push(i) : null));
-// console.log(finalResult);
-//------------------------------------------------------------------------
+// console.log(finalResult, '2nd')
 
+//------------------------------------------------------------------------
 // const myPromise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     const success = true;
@@ -122,17 +131,18 @@
 //     }
 //   }, 1000);
 // });
+// console.log(typeof myPromise)
 
-// calling promise with .then and .catch
-// myPromise
-//   .then((result) => {
-//     console.log("Resolved:", result);
-//   })
-//   .catch((error) => {
-//     console.error("Rejected:", error.message);
-//   });
+// // calling with .then and .catch
+// // myPromise
+// //   .then((result) => {
+// //     console.log("Resolved:", result);
+// //   })
+// //   .catch((error) => {
+// //     console.error("Rejected:", error.message);
+// //   });
 
-// // calling promise with async and await
+// // calling with async and await
 // async function handlePromise() {
 //     try {
 //         const result = await myPromise;
@@ -142,8 +152,8 @@
 //     }
 // }
 // handlePromise()
-// ----------------------------------------------------------------------
 
+// ----------------------------------------------------------------------
 // const originalObj = {
 //   a: 1,
 //   b: {
@@ -156,30 +166,30 @@
 //   },
 // };
 // const clone = deepCopy(originalObj);
-// console.log(clone);
+// // console.log(clone);
 
 // function deepCopy(obj) {
-//   // Check if obj is null or not an object, return it directly
+//   // Check if obj is null or not an object
 //   if (obj === null || typeof obj !== "object") {
 //     return obj;
 //   }
-//   // Create an empty object to store the copy
+//   // Create an empty object to store result
 //   const newObj = Array.isArray(obj) ? [] : {};
-
-//   // Iterate over each property of the original object
 //   for (let key in obj) {
+//     // console.log(key, obj[key])
 //     // Recursively deep copy each property
 //     newObj[key] = deepCopy(obj[key]);
 //   }
-//   // console.log("log", newObj)
 //   return newObj;
 // }
-// ---------------------------------------------------------------------
 
-// const a = new Array(10);
-// console.log(a.length);
 // ---------------------------------------------------------------------
-// const person = (firstName, lastName) => {
+// const a = new Array(10);
+// console.log(a)
+// console.log(a.length);
+
+// ---------------------------------------------------------------------
+// function person(firstName, lastName) {
 //   return {
 //     first: firstName,
 //     last: lastName,
@@ -205,8 +215,8 @@
 // grnee = false
 // grnee = "red"
 // console.log(grnee)
-// ---------------------------------------------------------------------
 
+// ---------------------------------------------------------------------
 // for (let i = 0; i < 3; i++) {
 //   setTimeout(() => {
 //     console.log(i);
@@ -217,5 +227,12 @@
 //   setTimeout(() => {
 //     console.log(i);
 //   }, 1000 + i);
+// }
+
+// for (var i = 0; i < 3; i++) {
+//     console.log(i, 'a');
+// }
+// for (let i = 0; i < 3; i++) {
+//   console.log(i, 'b');
 // }
 // ---------------------------------------------------------------------
