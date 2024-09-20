@@ -1,4 +1,4 @@
-// function func() {
+// function func1() {
 //   console.log(this.length);
 // }
 // var obj = {
@@ -8,7 +8,8 @@
 //     arguments[0]();
 //   },
 // };
-// obj.method(func, 1);
+// obj.method(func1, 1);
+
 // --------------------------------------------------------------
 // class Info {
 //   constructor(age) {
@@ -29,6 +30,7 @@
 // }
 // var obj = new Details("kamal", 20);
 // console.log(obj.details());
+
 // --------------------------------------------------------------
 // class Foo {
 //   constructor(name) {
@@ -49,11 +51,11 @@
 //   }
 // }
 
-// const firstFooBar = new FooBar('foo', 1);
-// console.log(firstFooBar.getFullName())
+// const firstFooBar = new FooBar("foo", 1);
+// console.log(firstFooBar.getFullName());
 // console.log(firstFooBar.name);
-// ----------------------------------------------------------------
 
+// ----------------------------------------------------------------
 // let pro = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     resolve("got resolved");
@@ -63,13 +65,14 @@
 //     reject("rejected");
 //   }, 2000);
 // });
+
 // pro
 //   .then((res) => {
 //     console.log(res);
 //   })
 //   .catch((err) => console.log(err));
-//--------------------------------------------------------------
 
+//--------------------------------------------------------------
 // Promise.resolve().then(() => console.log(4));
 // queueMicrotask(() => console.log(2));
 // setTimeout(() => {
@@ -78,8 +81,8 @@
 // console.log(1);
 // new Promise(() => console.log(5));
 // (async () => console.log(6))();
-// --------------------------------------------------------------
 
+// --------------------------------------------------------------
 // class Example {
 //   #privateProperty = "kk";
 //   constructor(value) {
@@ -129,3 +132,18 @@
 //   console.log(this);
 // }
 // n();
+// -----------------------------------------------------------------
+
+// function myFunc(a, b, c) {
+//   return [a, b, c, a, b, c];
+// }
+
+// let result1 = myFunc.length;
+// console.log(result1);
+
+// let result2 = myFunc(1, 2, 3, 4, 4, 44, 4, 4, 4, 4).length;
+// console.log(result2);
+// ----------------
+// setImmediate(() => console.log("setImmediate"))
+// process.nextTick(() => console.log("nextTick"))
+// ----------------------------------------------------------------
