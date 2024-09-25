@@ -60,7 +60,7 @@
 //   setTimeout(() => {
 //     resolve("got resolved");
 //   }, 3000);
-
+// console.log("loda lasun");
 //   setTimeout(() => {
 //     reject("rejected");
 //   }, 2000);
@@ -100,8 +100,10 @@
 // const instance = new Example("Initial Value");
 // console.log(instance);
 // console.log(instance.getPrivateProperty());
-// ----------------------------------------------------------------
+// console.log(instance.setPrivateProperty("kamal")); //undefined, bcoz it doesn't return anything, just setting value.
+// console.log(instance.getPrivateProperty());
 
+// ----------------------------------------------------------------
 // class Parent {
 //   constructor(nme) {
 //     this.name = nme;
@@ -119,12 +121,13 @@
 // console.log(a);
 // const b = new Child("ck", 50);
 // console.log(b);
+
 // ----------------------------------------------------------------
-
 // var date = new Date();
-// date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); // 1 week in milliseconds
-
 // console.log(date.toDateString())
+// date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); // 1 week in milliseconds
+// console.log(date.toDateString())
+
 // ----------------------------------------------------------------
 // console.log(this);
 // console.log(global);
@@ -132,8 +135,8 @@
 //   console.log(this);
 // }
 // n();
-// -----------------------------------------------------------------
 
+// -----------------------------------------------------------------
 // function myFunc(a, b, c) {
 //   return [a, b, c, a, b, c];
 // }
@@ -143,7 +146,7 @@
 
 // let result2 = myFunc(1, 2, 3, 4, 4, 44, 4, 4, 4, 4).length;
 // console.log(result2);
+
 // ----------------
-// setImmediate(() => console.log("setImmediate"))
-// process.nextTick(() => console.log("nextTick"))
-// ----------------------------------------------------------------
+setImmediate(() => console.log("setImmediate"))
+process.nextTick(() => console.log("nextTick"))
