@@ -1,10 +1,13 @@
 // function func1() {
+//   console.log("first");
 //   console.log(this.length);
 // }
 // var obj = {
 //   x: 5,
 //   method: function (func) {
+//     // this doesn't work
 //     func();
+//     // this one works
 //     arguments[0]();
 //   },
 // };
@@ -51,16 +54,16 @@
 //   }
 // }
 
-// const firstFooBar = new FooBar("foo", 1);
+// const firstFooBar = new FooBar("kamal", 1);
+// console.log(firstFooBar)
 // console.log(firstFooBar.getFullName());
-// console.log(firstFooBar.name);
 
 // ----------------------------------------------------------------
 // let pro = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     resolve("got resolved");
 //   }, 3000);
-// console.log("loda lasun");
+
 //   setTimeout(() => {
 //     reject("rejected");
 //   }, 2000);
@@ -88,7 +91,6 @@
 //   constructor(value) {
 //     this.#privateProperty = value;
 //   }
-
 //   getPrivateProperty() {
 //     return this.#privateProperty;
 //   }
@@ -109,10 +111,9 @@
 //     this.name = nme;
 //   }
 // }
-
 // class Child extends Parent {
 //   constructor(nme, age) {
-//     super(nme); // Correctly calls the parent class constructor
+//     super(nme); // calling the parent class constructor
 //     this.age = age;
 //   }
 // }
@@ -124,9 +125,12 @@
 
 // ----------------------------------------------------------------
 // var date = new Date();
-// console.log(date.toDateString())
-// date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); // 1 week in milliseconds
-// console.log(date.toDateString())
+// console.log(date, "date");
+// console.log(date.getTime());
+// console.log(date.toTimeString());
+// console.log(date.toDateString());
+// date.setTime(date.getTime() + 7 * 24 * 60 * 60 * 1000); // 1 week in milliseconds added to current date
+// console.log(date.toDateString());
 
 // ----------------------------------------------------------------
 // console.log(this);
@@ -143,10 +147,13 @@
 
 // let result1 = myFunc.length;
 // console.log(result1);
-
-// let result2 = myFunc(1, 2, 3, 4, 4, 44, 4, 4, 4, 4).length;
+// let result2 = myFunc().length;
 // console.log(result2);
 
+// let result3 = myFunc(1, 2, 3, 4, 4, 44, 4, 4, 4, 4).length;
+// console.log(result3);
+
 // ----------------
-setImmediate(() => console.log("setImmediate"))
-process.nextTick(() => console.log("nextTick"))
+// let a = [{ count: 10 }, { count: 20 }, { count: 50 }, { count: 10 }, { count: 10 }, { count: 10 }];
+// let result = a.filter((i) => i.count < 50);
+// console.log(result);
