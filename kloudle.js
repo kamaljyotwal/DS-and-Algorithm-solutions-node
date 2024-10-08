@@ -1,30 +1,40 @@
+// Best approach
 function compute(source) {
-  // first creating input arr without duplicates.
-  let newSet = new Set(source);
-  let arrWD = Array.from(newSet);
-  let final = [];
-  let step2Arr = [];
+  const frequency = new Map();
 
-  // looping and creating nested 1D matrix containing items and its no. of iterations
-  for (let i = 0; i < arrWD.length; i++) {
-    let count = 0;
-    let countArr = [0, 0];
-    for (let j = 0; j < source.length; j++) {
-      if (source[j] == arrWD[i]) {
-        count++;
-      }
-      countArr = [count, arrWD[i]];
-    }
-    step2Arr.push(countArr);
-  }
+  source.forEach((i) => {
+    frequency.set(i, (frequency.get(i) || 0) + 1);
+  });
 
-  // sorting the nested arr and sending values in final arr
-  let res = step2Arr.sort((a, b) => b[0] - a[0]);
-
-  res.map((i) => final.push(i[1]));
-
-  return final;
+  return Array.from(frequency)
+    .sort((a, b) => b[1] - a[1])
+    .map((entry) => entry[0]);
 }
+
+// ----------------------------------------------------
+// function compute(source) {
+//   // first creating input arr without duplicates.
+//   let arrWD = [...new Set(source)];
+//   let final = [];
+//   let step2Arr = [];
+
+//   // looping and creating nested 1D matrix containing items and its no. of iterations
+//   for (let i = 0; i < arrWD.length; i++) {
+//     let count = 0;
+//     let countArr = [0, 0];
+//     for (let j = 0; j < source.length; j++) {
+//       if (source[j] == arrWD[i]) {
+//         count++;
+//       }
+//       countArr = [count, arrWD[i]];
+//     }
+//     step2Arr.push(countArr);
+//   }
+//   // sorting the nested arr and sending values in final arr
+//   let res = step2Arr.sort((a, b) => b[0] - a[0]);
+//   res.map((i) => final.push(i[1]));
+//   return final;
+// }
 
 console.log(
   compute([
