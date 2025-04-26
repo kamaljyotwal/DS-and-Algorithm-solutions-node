@@ -29,11 +29,12 @@
 // -------------------------------------------------------
 // console.log((0.1 + 0.2).toFixed(3))
 // console.log((0.1 + 0.2))
-// -------------------------------------------------------
 
+// -------------------------------------------------------
 // var k = 12345;
 // var l = [...String(k)].map(Number);
 // console.log(l)
+
 // -------------------------------------------------------
 // const object1 = { name: "John" };
 // const object2 = { age: 30 };
@@ -53,8 +54,8 @@
 // };
 // const shallowCopy = { ...nestedObject };
 // console.log("Shallow Copy:", shallowCopy);
-// -------------------------------------------------------
 
+// -------------------------------------------------------
 // const person = {
 //   isHuman: false,
 //   printIntroduction: function () {
@@ -96,6 +97,7 @@
 // console.log(makeAdder(5)(5));
 
 // -----------------------------------------------------------------------
+// Polyfill for call,apply
 // const myName = {
 //   firstName: "kamal",
 //   lastName: "kant",
@@ -125,9 +127,7 @@
 // let a = [1, 2, 2, 3];
 // let b = [2, 4, 5];
 // let result = [...a, ...b];
-
-// // console.log([...new Set(result)], '1st');
-
+// console.log([...new Set(result)], '1st');
 
 // // // 2nd approach
 // // let finalResult = [];
@@ -144,6 +144,7 @@
 //         finalResult.push(item);
 //     }
 // });
+
 //------------------------------------------------------------------------
 // const myPromise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
@@ -259,8 +260,8 @@
 // for (let i = 0; i < 3; i++) {
 //   console.log(i, 'b');
 // }
-// ---------------------------------------------------------------------
 
+// ---------------------------------------------------------------------
 // findOccurance();
 
 // function findOccurance() {
@@ -306,6 +307,7 @@
 
 // }
 // stringValidator(str)
+
 // ---------------------------------------------------------------------
 // let input = [1, 2, 3, 4, 5, 6, 7, 8]
 // k = 3
@@ -344,6 +346,7 @@
 // }
 
 // console.log(flattenArray(arr))
+
 // =================================================
 // flatten object
 // var objWithArrays = {
@@ -373,7 +376,6 @@
 // console.log(flattenObject(objWithArrays))
 
 // ================================================
-
 // XSS and CSRF attack for interview
 // polyfill for debouncer
 // difference b/w debouncing and throttling
